@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>向左滑动删除</title>
+        <style media="screen">
+            body, html {
+                padding: 0;
+                margin: 0;
+                text-align: center;
+            }
+            p {
+              padding: 0;
+              margin: 0;
+              height: 50px;
+              line-height: 50px;
+              border-bottom: 1px solid #cccccc;
+            }
+            article {
+                width: 100%;
+                position: relative;
+            }
+            .pro-content {
+                width: 100%;
+                height: 100px;
+                line-height: 100px;
+                background-color: #ffffff;
+                z-index: 1;
+                transform: translateX(0);
+                transition: transform 0.05s linear;
+            }
+            article + article .pro-content {
+              border-top: 1px solid #cccccc;
+            }
+            .delete-btn {
+                width: 100px;
+                height: 100px;
+                line-height: 100px;
+                background-color: #CC1414;
+                position: absolute;
+                top: 0;
+                right: 0;
+                color: #ffffff;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <p>购物车</p>
+            <section>
+                <article>
+                    <div class="delete-btn">
+                        删除
+                    </div>
+                    <div class="pro-content" data-content='111'>
+                        内容1
+                    </div>
+                </article>
+                <article>
+                    <div class="delete-btn">
+                        删除
+                    </div>
+                    <div class="pro-content" data-content='222'>
+                        内容2
+                    </div>
+                </article>
+            </section>
+        </main>
+        <script src="./index.js"></script>
+    </body>
+</html>
